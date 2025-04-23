@@ -33,12 +33,7 @@ const eslintConfig = [
     ],
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
-      'prettier/prettier': [
-        'error',
-        {
-          endOfLine: 'auto',
-        },
-      ],
+      'prettier/prettier': 'off', // ! https://github.com/withastro/prettier-plugin-astro/issues/407
     },
   }),
 ];

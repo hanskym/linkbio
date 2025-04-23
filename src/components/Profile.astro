@@ -1,0 +1,193 @@
+---
+
+---
+
+<div class="mb-10 overflow-hidden rounded-radius bg-background-card shadow-shadow">
+  <div class="group relative h-[120px] bg-background-hover transition-all duration-300">
+    <img
+      src="https://placehold.co/600x120"
+      alt="Banner"
+      class="h-full w-full object-cover object-center opacity-100 transition-opacity duration-300"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-background-hover to-accent-tertiary opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+    >
+    </div>
+  </div>
+
+  <div class="pointer-events-none relative -top-[42px] z-10 flex items-end justify-between px-6">
+    <div class="pointer-events-auto relative">
+      <div
+        id="avatar"
+        class="relative size-[84px] cursor-pointer overflow-hidden rounded-full border-4 border-background-card bg-background-tile shadow-lg transition-transform duration-300"
+      >
+        <img
+          src="https://placehold.co/84x84"
+          alt="Hansky Mulya"
+          class="h-full w-full rounded-full object-cover"
+        />
+        <div
+          class="shimmer pointer-events-none absolute top-0 left-[-100%] h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-500"
+        >
+        </div>
+      </div>
+    </div>
+    <a
+      href="mailto:hansky@example.com"
+      class="pointer-events-auto flex items-center gap-2 rounded-md border border-border bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary shadow-inner backdrop-blur-sm transition-all hover:translate-y-[-1px] hover:bg-background-hover hover:text-text-primary"
+    >
+      <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
+        <div
+          class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20"
+        >
+        </div>
+      </div>
+      Available for work
+    </a>
+  </div>
+
+  <div class="-mt-8 px-6 pb-6">
+    <span class="mb-1 block text-xl font-semibold text-text-primary">Hansky Mulya</span>
+    <p class="mb-4 text-sm text-text-secondary">@Hansky_Mulya</p>
+
+    <div class="mb-5 flex flex-wrap items-center gap-1.5">
+      <div
+        class="rounded-radius bg-badge-verified px-2 py-1 text-xs font-medium text-white uppercase shadow-sm"
+      >
+        ● verified
+      </div>
+      <div
+        class="rounded-radius bg-badge-pro px-2 py-1 text-xs font-medium text-black uppercase shadow-sm"
+      >
+        ● pro
+      </div>
+      <div
+        class="rounded-radius bg-badge-dev px-2 py-1 text-xs font-medium text-white uppercase shadow-sm"
+      >
+        ● dev
+      </div>
+    </div>
+
+    <div class="mb-3 flex items-center text-base font-semibold text-text-primary uppercase">
+      About Me
+      <span class="ml-3 h-0.5 flex-grow bg-border"></span>
+    </div>
+    <div class="mb-5 text-sm leading-relaxed text-pretty text-text-primary md:text-base">
+      Web Developer with a passion for building seamless, interactive, and scalable web
+      applications. Focused on creating clean code and delivering exceptional user experiences.
+      Based in Jakarta, collaborating with clients globally.
+    </div>
+
+    <div class="flex gap-3">
+      <div
+        class="stat flex-1 cursor-pointer rounded-radius bg-background-tile p-3 text-center transition-transform hover:-translate-y-[3px] hover:bg-background-hover"
+      >
+        <p class="stat-value text-lg font-semibold text-accent transition-all">128</p>
+        <p class="mt-1 text-sm text-text-secondary">Projects</p>
+      </div>
+      <div
+        class="stat flex-1 cursor-pointer rounded-radius bg-background-tile p-3 text-center transition-transform hover:-translate-y-[3px] hover:bg-background-hover"
+      >
+        <p class="stat-value text-lg font-semibold text-accent transition-all">3.2K</p>
+        <p class="mt-1 text-sm text-text-secondary">Followers</p>
+      </div>
+      <div
+        class="stat flex-1 cursor-pointer rounded-radius bg-background-tile p-3 text-center transition-transform hover:-translate-y-[3px] hover:bg-background-hover"
+      >
+        <p class="stat-value text-lg font-semibold text-accent transition-all">421</p>
+        <p class="mt-1 text-sm text-text-secondary">Following</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes shimmer-right {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes shimmer-left {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  .shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    pointer-events: none;
+  }
+
+  .shimmer.animate-right {
+    animation: shimmer-right 0.5s ease-out;
+  }
+
+  .shimmer.animate-left {
+    animation: shimmer-left 0.5s ease-out;
+  }
+</style>
+
+<script>
+  // Avatar shimmer hover effect
+  const avatar = document.getElementById('avatar') as HTMLElement | null;
+
+  if (avatar) {
+    const shimmer = avatar.querySelector('.shimmer') as HTMLElement | null;
+
+    avatar.addEventListener('mouseover', () => {
+      avatar.style.transform = 'scale(1.05)';
+      avatar.style.borderColor = 'var(--border)';
+
+      if (shimmer) {
+        shimmer.classList.remove('animate-left');
+        void shimmer.offsetWidth;
+        shimmer.classList.add('animate-right');
+      }
+    });
+
+    avatar.addEventListener('mouseout', () => {
+      avatar.style.transform = 'scale(1)';
+      avatar.style.borderColor = 'var(--background-card)';
+
+      if (shimmer) {
+        shimmer.classList.remove('animate-right');
+        void shimmer.offsetWidth;
+        shimmer.classList.add('animate-left');
+      }
+    });
+  }
+
+  // Stat counter animation
+  document.querySelectorAll('.stat').forEach((stat) => {
+    const statValue = stat.querySelector('.stat-value');
+    if (!statValue) return;
+
+    const original = statValue.textContent || '0';
+    const numeric = parseInt(original.replace(/[^\d]/g, ''));
+
+    stat.addEventListener('mouseover', () => {
+      let counter = 0;
+      const interval = setInterval(() => {
+        counter += Math.ceil(numeric / 20);
+        if (counter >= numeric) {
+          clearInterval(interval);
+          statValue.textContent = original;
+        } else {
+          statValue.textContent = counter.toString();
+        }
+      }, 30);
+    });
+  });
+</script>

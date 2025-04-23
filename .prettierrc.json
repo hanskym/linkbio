@@ -11,7 +11,11 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-astro"],
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
   "importOrder": [
     "^(astro:(.*)$)|^(astro/(.*)$)|^(astro$)",
     "",
@@ -38,5 +42,7 @@
     "^[./]"
   ],
   "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "importOrderTypeScriptVersion": "5.0.0"
+  "importOrderTypeScriptVersion": "5.0.0",
+  "tailwindFunctions": ["cn", "cva"],
+  "tailwindStylesheet": "./src/styles/globals.css"
 }
