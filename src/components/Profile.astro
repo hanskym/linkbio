@@ -49,7 +49,7 @@ const {
       class="size-full object-cover object-center opacity-100 transition-opacity duration-300"
     />
     <div
-      class="absolute inset-0 bg-gradient-to-br from-background-hover to-accent-tertiary opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+      class="absolute inset-0 bg-gradient-to-br from-background-hover to-accent-banner opacity-0 transition-opacity duration-300 group-hover:opacity-50"
     >
     </div>
   </div>
@@ -76,7 +76,7 @@ const {
       href={statusLink}
       target="_blank"
       rel="noopener noreferrer"
-      class="pointer-events-auto flex items-center gap-2 rounded-md border border-border bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary shadow-inner backdrop-blur-sm transition-all hover:bg-background-hover hover:text-text-primary"
+      class="pointer-events-auto flex items-center gap-2 rounded-md bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary backdrop-blur-sm transition-all hover:bg-background-hover hover:text-text-primary"
     >
       {
         statusEmoji ? (
@@ -142,7 +142,7 @@ const {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent-shimmer), transparent);
     pointer-events: none;
   }
 
@@ -191,9 +191,14 @@ const {
     if (!statValue) return;
 
     const original = statValue.textContent || '0';
-    const numeric = parseInt(original.replace(/[^\d]/g, ''));
+    const numeric = parseInt(original.replace(/[^\d]/g, ''), 10);
+
+    let isAnimating = false;
 
     stat.addEventListener('mouseover', () => {
+      if (isAnimating) return;
+      isAnimating = true;
+
       let counter = 0;
       const interval = setInterval(() => {
         counter += Math.ceil(numeric / 20);
@@ -204,6 +209,11 @@ const {
           statValue.textContent = counter.toString();
         }
       }, 30);
+    });
+
+    stat.addEventListener('mouseleave', () => {
+      isAnimating = false;
+      statValue.textContent = original;
     });
   });
 </script>

@@ -27,8 +27,8 @@
   --color-text-secondary: var(--text-secondary);
 
   --color-accent: var(--accent);
-  --color-accent-secondary: var(--accent-secondary);
-  --color-accent-tertiary: var(--accent-tertiary);
+  --color-accent-banner: var(--accent-banner);
+  --color-accent-shimmer: var(--accent-shimmer);
 
   --color-border: var(--border);
 
@@ -49,21 +49,40 @@
 
 @layer base {
   :root {
-    --background: #121212;
-    --background-card: #1a1a1a;
-    --background-tile: #252525;
-    --background-hover: #242321;
+    --background: oklch(0.98 0 0);
+    --background-card: oklch(1 0 0);
+    --background-tile: oklch(0.97 0 0);
+    --background-hover: oklch(0.94 0 0);
 
-    --text-primary: #f0f0f0;
-    --text-secondary: #a0a0a0;
+    --text-primary: oklch(0.22 0 0);
+    --text-secondary: oklch(0.48 0 0);
 
-    --accent: #e6e1d6;
-    --accent-secondary: #c9c3b9;
-    --accent-tertiary: #373737;
+    --accent: oklch(0.35 0 0);
+    --accent-banner: oklch(0.35 0 0);
+    --accent-shimmer: rgba(0, 0, 0, 0.1);
 
-    --border: #333333;
-
+    --border: oklch(0.88 0 0);
     --radius: 0.5rem;
+
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark {
+    --background: oklch(0.18 0 0);
+    --background-card: oklch(0.22 0 0);
+    --background-tile: oklch(0.28 0 0);
+    --background-hover: oklch(0.25 0 0);
+
+    --text-primary: oklch(0.97 0 0);
+    --text-secondary: oklch(0.73 0 0);
+
+    --accent: oklch(0.87 0 0);
+    --accent-banner: oklch(0.87 0 0);
+    --accent-shimmer: rgba(255, 255, 255, 0.2);
+
+    --border: oklch(0.32 0 0);
+    --radius: 0.5rem;
+
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
