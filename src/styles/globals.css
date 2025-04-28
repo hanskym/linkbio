@@ -32,10 +32,6 @@
 
   --color-border: var(--border);
 
-  --color-badge-verified: var(--badge-verified);
-  --color-badge-pro: var(--badge-pro);
-  --color-badge-dev: var(--badge-dev);
-
   --radius-radius: var(--radius);
   --shadow-shadow: var(--shadow);
 
@@ -67,15 +63,11 @@
 
     --border: #333333;
 
-    --badge-verified: #5c8af0;
-    --badge-pro: #c9a766;
-    --badge-dev: #eb6f92;
-
     --radius: 0.5rem;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
   body {
-    @apply flex min-h-screen items-start justify-center bg-background p-5 pt-10 font-sans leading-relaxed text-text-primary;
+    @apply flex min-h-screen items-start justify-center bg-background p-5 pt-10 font-sans leading-relaxed text-text-primary antialiased;
   }
 }

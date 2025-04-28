@@ -1,13 +1,52 @@
 ---
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import StatItem from '@/components/ui/StatItem.astro';
 
+interface BadgeItem {
+  label: string;
+  colorClass?: string;
+}
+
+interface StatItem {
+  value: string | number;
+  label: string;
+}
+
+interface Props {
+  name: string;
+  username: string;
+  about: string;
+  statusEmoji?: string;
+  statusText: string;
+  statusLink: string;
+  avatarSrc: string;
+  bannerSrc: string;
+  badges: BadgeItem[];
+  stats: StatItem[];
+}
+
+const {
+  name,
+  username,
+  about,
+  statusEmoji,
+  statusText,
+  statusLink,
+  avatarSrc,
+  bannerSrc,
+  badges,
+  stats,
+} = Astro.props;
 ---
 
-<div class="mb-10 overflow-hidden rounded-radius bg-background-card shadow-shadow">
-  <div class="group relative h-[120px] bg-background-hover transition-all duration-300">
+<Card className="overflow-hidden p-0">
+  <!-- Banner -->
+  <div class="group relative aspect-[2.5/1] bg-background-hover transition-all duration-300">
     <img
-      src="https://placehold.co/600x120"
+      src={bannerSrc}
       alt="Banner"
-      class="h-full w-full object-cover object-center opacity-100 transition-opacity duration-300"
+      class="size-full object-cover object-center opacity-100 transition-opacity duration-300"
     />
     <div
       class="absolute inset-0 bg-gradient-to-br from-background-hover to-accent-tertiary opacity-0 transition-opacity duration-300 group-hover:opacity-50"
@@ -15,91 +54,68 @@
     </div>
   </div>
 
-  <div class="pointer-events-none relative -top-[42px] z-10 flex items-end justify-between px-6">
+  <!-- Avatar -->
+  <div
+    class="pointer-events-none relative -top-[42px] z-10 flex items-end justify-between px-6 md:-top-[52px]"
+  >
     <div class="pointer-events-auto relative">
       <div
         id="avatar"
-        class="relative size-[84px] cursor-pointer overflow-hidden rounded-full border-4 border-background-card bg-background-tile shadow-lg transition-transform duration-300"
+        class="relative aspect-square size-24 cursor-pointer overflow-hidden rounded-full border-4 border-background-card bg-background-tile shadow-lg transition-transform duration-300 md:size-28"
       >
-        <img
-          src="https://placehold.co/84x84"
-          alt="Hansky Mulya"
-          class="h-full w-full rounded-full object-cover"
-        />
+        <img src={avatarSrc} alt={name} class="size-full rounded-full object-cover" />
         <div
-          class="shimmer pointer-events-none absolute top-0 left-[-100%] h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-500"
+          class="shimmer pointer-events-none absolute top-0 left-[-100%] size-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-500"
         >
         </div>
       </div>
     </div>
+
+    <!-- Status -->
     <a
-      href="mailto:hansky@example.com"
-      class="pointer-events-auto flex items-center gap-2 rounded-md border border-border bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary shadow-inner backdrop-blur-sm transition-all hover:translate-y-[-1px] hover:bg-background-hover hover:text-text-primary"
+      href={statusLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="pointer-events-auto flex items-center gap-2 rounded-md border border-border bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary shadow-inner backdrop-blur-sm transition-all hover:bg-background-hover hover:text-text-primary"
     >
-      <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
-        <div
-          class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20"
-        >
-        </div>
-      </div>
-      Available for work
+      {
+        statusEmoji ? (
+          <span class="text-xl">{statusEmoji}</span>
+        ) : (
+          <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
+            <div class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20" />
+          </div>
+        )
+      }
+      {statusText}
     </a>
   </div>
 
+  <!-- User profile -->
   <div class="-mt-8 px-6 pb-6">
-    <span class="mb-1 block text-xl font-semibold text-text-primary">Hansky Mulya</span>
-    <p class="mb-4 text-sm text-text-secondary">@Hansky_Mulya</p>
+    <span class="mb-1 block text-xl font-semibold text-text-primary md:text-2xl">{name}</span>
+    <p class="mb-4 text-sm text-text-secondary md:text-base">@{username}</p>
 
+    <!-- Badges -->
     <div class="mb-5 flex flex-wrap items-center gap-1.5">
-      <div
-        class="rounded-radius bg-badge-verified px-2 py-1 text-xs font-medium text-white uppercase shadow-sm"
-      >
-        ● verified
-      </div>
-      <div
-        class="rounded-radius bg-badge-pro px-2 py-1 text-xs font-medium text-black uppercase shadow-sm"
-      >
-        ● pro
-      </div>
-      <div
-        class="rounded-radius bg-badge-dev px-2 py-1 text-xs font-medium text-white uppercase shadow-sm"
-      >
-        ● dev
-      </div>
+      {badges.map((badge) => <Badge label={badge.label} className={badge.colorClass} />)}
     </div>
 
+    <!-- About Me -->
     <div class="mb-3 flex items-center text-base font-semibold text-text-primary uppercase">
       About Me
       <span class="ml-3 h-0.5 flex-grow bg-border"></span>
     </div>
     <div class="mb-5 text-sm leading-relaxed text-pretty text-text-primary md:text-base">
-      Web Developer with a passion for building seamless, interactive, and scalable web
-      applications. Focused on creating clean code and delivering exceptional user experiences.
-      Based in Jakarta, collaborating with clients globally.
+      {about}
     </div>
 
+    <!-- Stats -->
     <div class="flex gap-3">
-      <div
-        class="stat flex-1 cursor-pointer rounded-radius bg-background-tile p-3 text-center transition-transform hover:-translate-y-[3px] hover:bg-background-hover"
-      >
-        <p class="stat-value text-lg font-semibold text-accent transition-all">128</p>
-        <p class="mt-1 text-sm text-text-secondary">Projects</p>
-      </div>
-      <div
-        class="stat flex-1 cursor-pointer rounded-radius bg-background-tile p-3 text-center transition-transform hover:-translate-y-[3px] hover:bg-background-hover"
-      >
-        <p class="stat-value text-lg font-semibold text-accent transition-all">3.2K</p>
-        <p class="mt-1 text-sm text-text-secondary">Followers</p>
-      </div>
-      <div
-        class="stat flex-1 cursor-pointer rounded-radius bg-background-tile p-3 text-center transition-transform hover:-translate-y-[3px] hover:bg-background-hover"
-      >
-        <p class="stat-value text-lg font-semibold text-accent transition-all">421</p>
-        <p class="mt-1 text-sm text-text-secondary">Following</p>
-      </div>
+      {stats.map((stat) => <StatItem className="stat" value={stat.value} label={stat.label} />)}
     </div>
   </div>
-</div>
+</Card>
 
 <style>
   @keyframes shimmer-right {

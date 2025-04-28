@@ -1,0 +1,60 @@
+---
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group relative flex items-center gap-3 overflow-hidden rounded-radius border-l-[3px] border-transparent bg-background-tile p-4 text-text-primary no-underline transition-all hover:translate-x-[5px] hover:border-accent hover:bg-background-hover"
+>
+  <span class="shimmer-gradient absolute inset-0"></span>
+
+  <div class="z-10 flex h-6 w-6 shrink-0 items-center justify-center">
+    <slot name="icon" />
+  </div>
+
+  <span class="z-10 flex-grow text-sm font-medium md:text-base">{label}</span>
+
+  <span
+    class="z-10 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
+  >
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="text-current"
+    >
+      <path d="M5 12h14"></path>
+      <path d="M12 5l7 7-7 7"></path>
+    </svg>
+  </span>
+</a>
+
+<style>
+  .shimmer-gradient::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+  }
+
+  .group:hover .shimmer-gradient::after {
+    left: 100%;
+  }
+</style>
