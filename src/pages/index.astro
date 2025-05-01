@@ -1,5 +1,5 @@
 ---
-import Main from '@/layouts/Main.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 import Featured from '@/components/Featured.astro';
 import Links from '@/components/Links.astro';
@@ -9,7 +9,7 @@ import FeaturedItem from '@/components/ui/FeaturedItem.astro';
 import LinkItem from '@/components/ui/LinkItem.astro';
 ---
 
-<Main>
+<BaseLayout>
   <Profile
     name="Hansky Mulya"
     username="Hansky_Mulya"
@@ -32,18 +32,13 @@ import LinkItem from '@/components/ui/LinkItem.astro';
 
   <Links title="My Links">
     <LinkItem href="https://example.com" label="Portfolio Website">
-      <svg
-        slot="icon"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="text-current"
-      >
+      <svg slot="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path
-          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
-        ></path>
-        <path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="m2 1.97101 1.40082 0.61286 3.36543 1.47237C8.02889 3.38206 9.47104 3.00002 11 3.00002c1.529 0 2.9711 0.38204 4.2338 1.05622l3.3654 -1.47237L20 1.97101v6.02901h1c0.5523 0 1 0.44772 1 1V12c0 0.5523 -0.4477 1 -1 1h-1.0549c-0.4975 4.5 -4.3125 8 -8.9451 8 -4.97056 0 -9 -4.0294 -9 -9V1.97101Zm16 3.05803v2.97098h-2c-0.5523 0 -1 0.44772 -1 1h-2c0 -0.55228 -0.4477 -1 -1 -1H7c-0.55228 0 -1 0.44772 -1 1H4V5.02904l2.42518 1.06102 0.47823 0.20922 0.44508 -0.27273C8.41088 5.37553 9.66006 5.00002 11 5.00002c1.3399 0 2.5891 0.37551 3.6515 1.02653l0.4451 0.27273 0.4782 -0.20922L18 5.02904ZM13 11h2v1c0 0.5523 0.4477 1 1 1h1.9291c-0.4852 3.3923 -3.4026 6 -6.9291 6 -3.86599 0 -7 -3.134 -7 -7v-1h2v1c0 0.5523 0.44772 1 1 1h5c0.5523 0 1 -0.4477 1 -1v-1Zm-0.5 4.75c-0.8145 0 -2.1195 -0.4302 -2.96967 -1.2803l-1.06066 1.0607C9.61952 16.6802 11.3145 17.25 12.5 17.25v-1.5Z"
+          clip-rule="evenodd"
+          stroke-width="1"></path>
       </svg>
     </LinkItem>
 
@@ -118,9 +113,9 @@ import LinkItem from '@/components/ui/LinkItem.astro';
       href="mailto:hansky@example.com"
       target="_blank"
       rel="noopener noreferrer"
-      class="relative mt-4 block w-full overflow-hidden rounded-radius bg-background-tile px-6 py-4 text-center text-base font-medium text-text-primary no-underline transition-all duration-300 before:absolute before:top-0 before:left-[-100%] before:h-full before:w-full before:bg-[linear-gradient(90deg,transparent,var(--accent-shimmer),transparent)] before:transition-all before:duration-500 before:content-[''] hover:-translate-y-0.5 hover:bg-background-hover hover:shadow-lg hover:before:left-[100%]"
+      class="relative mt-4 block w-full overflow-hidden rounded-radius bg-background-tile px-6 py-4 text-center text-base font-medium text-text-primary no-underline transition-all duration-300 before:absolute before:top-0 before:left-[-100%] before:size-full before:bg-[linear-gradient(90deg,transparent,var(--accent-shimmer),transparent)] before:transition-all before:duration-500 before:content-[''] hover:-translate-y-0.5 hover:bg-background-hover hover:shadow-lg hover:before:left-[100%]"
     >
       Contact Me
     </a>
   </Card>
-</Main>
+</BaseLayout>

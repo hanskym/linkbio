@@ -19,6 +19,7 @@ const themes = [
           class="theme-btn relative inline-flex size-6 items-center justify-center overflow-hidden rounded-radius p-1 transition-all duration-300 before:absolute before:top-0 before:left-[-100%] before:size-full before:bg-[linear-gradient(90deg,transparent,var(--accent-shimmer),transparent)] before:transition-all before:duration-500 before:content-[''] hover:-translate-y-0.5 hover:bg-background-hover hover:shadow-lg hover:before:left-[100%]"
           data-theme-id={theme.id}
           aria-label={`Switch to ${theme.label} theme`}
+          title={`Switch to ${theme.label} theme`}
         >
           {theme.id === 'light' && (
             <svg

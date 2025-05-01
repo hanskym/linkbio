@@ -13,7 +13,7 @@ const { href, imageSrc, altText, title } = Astro.props;
   href={href}
   target="_blank"
   rel="noopener noreferrer"
-  class="flex h-full cursor-pointer flex-col overflow-hidden rounded-radius bg-background-card shadow-md transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+  class="group flex h-full cursor-pointer flex-col overflow-hidden rounded-radius bg-background-card shadow-md transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
 >
   <div class="relative aspect-square shrink-0 overflow-hidden rounded-t-radius">
     <img
@@ -23,7 +23,7 @@ const { href, imageSrc, altText, title } = Astro.props;
     />
   </div>
   <div
-    class="flex min-h-16 flex-1 items-center justify-center border-t-2 border-border bg-background-tile px-4 py-3 text-center text-sm font-medium text-text-primary md:text-base"
+    class="flex min-h-16 flex-1 items-center justify-center border-t-2 border-border bg-background-tile px-4 py-3 text-center text-sm font-medium text-text-primary transition-colors duration-300 group-hover:bg-background-hover md:text-base"
   >
     {title}
   </div>

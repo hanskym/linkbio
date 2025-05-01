@@ -87,6 +87,6 @@
   }
 
   body {
-    @apply flex min-h-screen items-start justify-center bg-background p-5 pt-10 font-sans leading-relaxed text-text-primary antialiased;
+    @apply flex min-h-screen items-center justify-center bg-background p-5 pt-10 font-sans leading-relaxed text-text-primary antialiased;
   }
 }
