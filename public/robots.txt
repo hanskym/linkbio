@@ -1,0 +1,4 @@
+User-agent: *
+ Allow: /
+ 
+ Sitemap: https://linkbio.hansky.dev/sitemap-index.xml
