@@ -1,9 +1,11 @@
 ---
-import robotoFlex from '@fontsource-variable/roboto-flex/files/roboto-flex-latin-wght-normal.woff2?url';
-
 import Footer from '@/components/Footer.astro';
+import ThemeManager from '@/components/ThemeManager.astro';
+import ThemeSelector from '@/components/ThemeSelector.astro';
 
 import '@/styles/globals.css';
+
+import robotoFlex from '@fontsource-variable/roboto-flex/files/roboto-flex-latin-wght-normal.woff2?url';
 ---
 
 <!doctype html>
@@ -15,10 +17,12 @@ import '@/styles/globals.css';
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
     <link rel="preload" as="font" type="font/woff2" href={robotoFlex} crossorigin="anonymous" />
+    <ThemeManager defaultTheme="system" />
   </head>
   <body>
     <div id="container" class="mx-auto w-full max-w-md">
       <slot />
+      <ThemeSelector />
       <Footer />
     </div>
   </body>
