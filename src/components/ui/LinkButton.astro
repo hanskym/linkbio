@@ -1,0 +1,34 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  className?: string;
+  href?: string;
+  text?: string;
+  isExternal?: boolean;
+  isEmail?: boolean;
+}
+
+const {
+  className,
+  href = '#',
+  text = 'Click Me',
+  isExternal = false,
+  isEmail = false,
+}: Props = Astro.props;
+
+const target = isExternal || isEmail ? '_blank' : '_self';
+const rel = isExternal || isEmail ? 'noopener noreferrer' : '';
+---
+
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class={cn(
+    "relative mt-4 block w-full overflow-hidden rounded-radius bg-background-tile px-6 py-4 text-center text-base font-medium text-text-primary no-underline transition-all duration-300 before:absolute before:top-0 before:left-[-100%] before:size-full before:bg-[linear-gradient(90deg,transparent,var(--accent-shimmer),transparent)] before:transition-all before:duration-500 before:content-[''] hover:-translate-y-0.5 hover:bg-background-hover hover:shadow-lg hover:before:left-[100%]",
+    className,
+  )}
+>
+  {text}
+</a>

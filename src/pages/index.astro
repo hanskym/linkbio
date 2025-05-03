@@ -8,6 +8,7 @@ import Links from '@/components/Links.astro';
 import Profile from '@/components/Profile.astro';
 import Card from '@/components/ui/Card.astro';
 import FeaturedItem from '@/components/ui/FeaturedItem.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
 import LinkItem from '@/components/ui/LinkItem.astro';
 
 const metadata: MetadataProps = {
@@ -116,6 +117,18 @@ const metadata: MetadataProps = {
     />
   </Featured>
 
+  <Card title="Media">
+    <iframe
+      width="100%"
+      height="315"
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=f0gc62cVwTZgZUTJ"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </Card>
+
   <Card title="Get in Touch">
     <img
       src="/jakarta-map.png"
@@ -123,13 +136,6 @@ const metadata: MetadataProps = {
       class="size-full max-w-full rounded-radius object-cover shadow-md"
     />
 
-    <a
-      href="mailto:hansky@example.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="relative mt-4 block w-full overflow-hidden rounded-radius bg-background-tile px-6 py-4 text-center text-base font-medium text-text-primary no-underline transition-all duration-300 before:absolute before:top-0 before:left-[-100%] before:size-full before:bg-[linear-gradient(90deg,transparent,var(--accent-shimmer),transparent)] before:transition-all before:duration-500 before:content-[''] hover:-translate-y-0.5 hover:bg-background-hover hover:shadow-lg hover:before:left-[100%]"
-    >
-      Contact Me
-    </a>
+    <LinkButton href="mailto:hansky@example.com" text="Contact Me" isEmail={true} />
   </Card>
 </BaseLayout>
