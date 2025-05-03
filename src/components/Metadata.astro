@@ -1,16 +1,5 @@
 ---
-export interface Props {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  author?: string;
-  image?: string;
-  url?: string;
-  siteName?: string;
-  type?: string;
-  locale?: string;
-  twitterHandle?: string;
-}
+import type { MetadataProps } from '@/types/metadata.ts';
 
 const {
   title = 'LinkBio',
@@ -18,12 +7,13 @@ const {
   keywords = 'linkbio, bio link, link in bio, single page, minimalist, simple',
   author = 'Hansky Mulya',
   image = new URL('/opengraph.png', Astro.site),
-  url = new URL(Astro.url.pathname, Astro.site),
-  siteName = 'LinkBio',
-  type = 'website',
   locale = 'en_US',
   twitterHandle = '@example',
-} = Astro.props;
+} = Astro.props as MetadataProps;
+
+const url = new URL(Astro.url.pathname, Astro.site);
+const siteName = 'LinkBio';
+const type = 'profile';
 ---
 
 <title>{title}</title>
@@ -56,15 +46,22 @@ const {
 <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Hansky Mulya",
+    "@type": "ProfilePage",
     "url": "https://yourdomain.com",
+    "name": "Hansky Mulya — LinkBio",
+    "description": "A simple link‑in‑bio page for Hansky Mulya, aggregating my most important links in one place.",
     "image": "https://yourdomain.com/avatar.jpg",
-    "description": "Minimalist link-in-bio page",
-    "sameAs": [
-      "https://github.com/username",
-      "https://linkedin.com/in/username",
-      "https://twitter.com/username"
-    ]
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Hansky Mulya",
+      "url": "https://yourdomain.com",
+      "image": "https://yourdomain.com/avatar.jpg",
+      "sameAs": [
+        "https://dribbble.com/username",
+        "https://github.com/username",
+        "https://linkedin.com/in/username",
+        "https://twitter.com/username"
+      ]
+    }
   }
 </script>

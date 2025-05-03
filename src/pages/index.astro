@@ -1,15 +1,29 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
+import type { MetadataProps } from '@/types/metadata.ts';
+
 import Featured from '@/components/Featured.astro';
 import Links from '@/components/Links.astro';
 import Profile from '@/components/Profile.astro';
 import Card from '@/components/ui/Card.astro';
 import FeaturedItem from '@/components/ui/FeaturedItem.astro';
 import LinkItem from '@/components/ui/LinkItem.astro';
+
+const metadata: MetadataProps = {
+  title: 'Hansky Mulya | Web Developer & Creator',
+  description:
+    "Explore all my links in one place — portfolio, GitHub, LinkedIn, Dribbble, and more. Connect with me and see what I'm building.",
+  keywords:
+    'Hansky Mulya, link in bio, web developer, portfolio, GitHub, LinkedIn, Dribbble, Twitter, contact',
+  author: 'Hansky Mulya',
+  image: 'https://placehold.co/600x240',
+  locale: 'en_US',
+  twitterHandle: '@Hansky_Mulya',
+};
 ---
 
-<BaseLayout>
+<BaseLayout metadata={metadata}>
   <Profile
     name="Hansky Mulya"
     username="Hansky_Mulya"

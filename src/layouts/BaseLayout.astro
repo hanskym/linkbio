@@ -1,6 +1,8 @@
 ---
+import type { MetadataProps } from '@/types/metadata.ts';
+
 import Footer from '@/components/Footer.astro';
-import SEO from '@/components/SEO.astro';
+import Metadata from '@/components/Metadata.astro';
 import ThemeManager from '@/components/ThemeManager.astro';
 import ThemeSelector from '@/components/ThemeSelector.astro';
 
@@ -9,23 +11,10 @@ import '@/styles/globals.css';
 import robotoFlex from '@fontsource-variable/roboto-flex/files/roboto-flex-latin-wght-normal.woff2?url';
 
 export interface Props {
-  seo?: {
-    title?: string;
-    description?: string;
-    keywords?: string;
-    author?: string;
-    image?: string;
-    url?: string;
-    siteName?: string;
-    type?: string;
-    locale?: string;
-    twitterHandle?: string;
-    publishedTime?: string;
-    modifiedTime?: string;
-  };
+  metadata?: MetadataProps;
 }
 
-const { seo } = Astro.props;
+const { metadata } = Astro.props;
 ---
 
 <!doctype html>
@@ -35,7 +24,7 @@ const { seo } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
 
-    <SEO {...seo} />
+    <Metadata {...metadata} />
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
