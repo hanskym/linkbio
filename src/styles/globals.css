@@ -89,4 +89,14 @@
   body {
     @apply flex min-h-screen items-center justify-center bg-background p-5 pt-10 font-sans leading-relaxed text-text-primary antialiased;
   }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

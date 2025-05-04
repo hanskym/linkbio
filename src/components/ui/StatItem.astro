@@ -1,5 +1,5 @@
 ---
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils.ts';
 
 interface Props {
   className?: string;
@@ -16,6 +16,6 @@ const { className, label, value } = Astro.props;
     className,
   )}
 >
-  <p class="stat-value text-lg font-semibold transition-all">{value}</p>
-  <p class="mt-1 text-sm text-text-secondary">{label}</p>
+  <span class="stat-value block text-lg font-semibold transition-all">{value}</span>
+  <span class="mt-1 block text-sm text-text-secondary">{label}</span>
 </div>

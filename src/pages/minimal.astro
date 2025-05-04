@@ -1,0 +1,341 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+import type { MetadataProps } from '@/types/metadata.ts';
+
+import Links from '@/components/Links.astro';
+import Profile from '@/components/Profile.astro';
+import LinkItem from '@/components/ui/LinkItem.astro';
+import StoryItem from '@/components/ui/StoryItem.astro';
+
+const metadata: MetadataProps = {
+  title: 'Maya Lestari | Digital Creator',
+  description:
+    "Your go-to girl for all things lifestyle, fashion, and digital inspiration. Let's connect!",
+  keywords:
+    'Maya Lestari, link in bio, Instagram, TikTok, lifestyle influencer, content creator, beauty, fashion',
+  author: 'Maya Lestari',
+  image: 'https://images.unsplash.com/photo-1503264116251-35a269479413?w=1200&h=630&fit=crop',
+  locale: 'en_US',
+  twitterHandle: '@mayalestari',
+};
+---
+
+<BaseLayout metadata={metadata}>
+  <Profile
+    name="Maya Lestari"
+    username="mayalestari"
+    about="Lifestyle and beauty content creator sharing simple style tips, skincare secrets, and good vibes to inspire confidence in every day. ✨"
+    statusText="DMs open for collabs"
+    statusLink="mailto:maya@example.com"
+    statusEmoji="💌"
+    avatarSrc="https://images.unsplash.com/photo-1620613908146-bb9a8bbb7eca?w=128&h=128&fit=crop"
+    bannerSrc="https://images.unsplash.com/photo-1503264116251-35a269479413?w=600&h=240&fit=crop"
+  >
+    <div class="no-scrollbar overflow-auto p-1">
+      <div class="flex items-center justify-start gap-3">
+        <StoryItem
+          href="https://instagram.com/mayalestari"
+          imageSrc="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=128&q=80"
+          alt="Story highlight: Skincare"
+          label="Skincare"
+        />
+
+        <StoryItem
+          href="https://tiktok.com/@mayalestari"
+          imageSrc="https://images.unsplash.com/photo-1497321697169-1ca9f1c8a253?auto=format&fit=crop&w=128&q=80"
+          alt="Story highlight: Morning"
+          label="Morning"
+        />
+
+        <StoryItem
+          href="https://youtube.com/@mayalestari"
+          imageSrc="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=128&q=80"
+          alt="Story highlight: Travel"
+          label="Travel"
+        />
+      </div>
+    </div>
+  </Profile>
+
+  <Links title="Find Me Here">
+    <LinkItem href="https://instagram.com/mayalestari" label="Instagram">
+      <svg
+        slot="icon"
+        enable-background="new 0 0 128 128"
+        id="Social_Icons"
+        version="1.1"
+        viewBox="0 0 128 128"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g id="_x37__stroke">
+          <g id="Instagram_1_">
+            <rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128"
+            ></rect>
+            <radialGradient
+              cx="19.1111"
+              cy="128.4444"
+              gradientUnits="userSpaceOnUse"
+              id="Instagram_2_"
+              r="163.5519"
+            >
+              <stop offset="0" style="stop-color: #ffb140;"></stop>
+              <stop offset="0.2559" style="stop-color: #ff5445;"></stop>
+              <stop offset="0.599" style="stop-color: #fc2b82;"></stop>
+              <stop offset="1" style="stop-color: #8e40b7;"></stop>
+            </radialGradient>
+            <path
+              clip-rule="evenodd"
+              d="M105.843,29.837    c0,4.242-3.439,7.68-7.68,7.68c-4.241,0-7.68-3.438-7.68-7.68c0-4.242,3.439-7.68,7.68-7.68    C102.405,22.157,105.843,25.595,105.843,29.837z M64,85.333c-11.782,0-21.333-9.551-21.333-21.333    c0-11.782,9.551-21.333,21.333-21.333c11.782,0,21.333,9.551,21.333,21.333C85.333,75.782,75.782,85.333,64,85.333z M64,31.135    c-18.151,0-32.865,14.714-32.865,32.865c0,18.151,14.714,32.865,32.865,32.865c18.151,0,32.865-14.714,32.865-32.865    C96.865,45.849,82.151,31.135,64,31.135z M64,11.532c17.089,0,19.113,0.065,25.861,0.373c6.24,0.285,9.629,1.327,11.884,2.204    c2.987,1.161,5.119,2.548,7.359,4.788c2.24,2.239,3.627,4.371,4.788,7.359c0.876,2.255,1.919,5.644,2.204,11.884    c0.308,6.749,0.373,8.773,0.373,25.862c0,17.089-0.065,19.113-0.373,25.861c-0.285,6.24-1.327,9.629-2.204,11.884    c-1.161,2.987-2.548,5.119-4.788,7.359c-2.239,2.24-4.371,3.627-7.359,4.788c-2.255,0.876-5.644,1.919-11.884,2.204    c-6.748,0.308-8.772,0.373-25.861,0.373c-17.09,0-19.114-0.065-25.862-0.373c-6.24-0.285-9.629-1.327-11.884-2.204    c-2.987-1.161-5.119-2.548-7.359-4.788c-2.239-2.239-3.627-4.371-4.788-7.359c-0.876-2.255-1.919-5.644-2.204-11.884    c-0.308-6.749-0.373-8.773-0.373-25.861c0-17.089,0.065-19.113,0.373-25.862c0.285-6.24,1.327-9.629,2.204-11.884    c1.161-2.987,2.548-5.119,4.788-7.359c2.239-2.24,4.371-3.627,7.359-4.788c2.255-0.876,5.644-1.919,11.884-2.204    C44.887,11.597,46.911,11.532,64,11.532z M64,0C46.619,0,44.439,0.074,37.613,0.385C30.801,0.696,26.148,1.778,22.078,3.36    c-4.209,1.635-7.778,3.824-11.336,7.382C7.184,14.3,4.995,17.869,3.36,22.078c-1.582,4.071-2.664,8.723-2.975,15.535    C0.074,44.439,0,46.619,0,64c0,17.381,0.074,19.561,0.385,26.387c0.311,6.812,1.393,11.464,2.975,15.535    c1.635,4.209,3.824,7.778,7.382,11.336c3.558,3.558,7.127,5.746,11.336,7.382c4.071,1.582,8.723,2.664,15.535,2.975    C44.439,127.926,46.619,128,64,128c17.381,0,19.561-0.074,26.387-0.385c6.812-0.311,11.464-1.393,15.535-2.975    c4.209-1.636,7.778-3.824,11.336-7.382c3.558-3.558,5.746-7.127,7.382-11.336c1.582-4.071,2.664-8.723,2.975-15.535    C127.926,83.561,128,81.381,128,64c0-17.381-0.074-19.561-0.385-26.387c-0.311-6.812-1.393-11.464-2.975-15.535    c-1.636-4.209-3.824-7.778-7.382-11.336c-3.558-3.558-7.127-5.746-11.336-7.382c-4.071-1.582-8.723-2.664-15.535-2.975    C83.561,0.074,81.381,0,64,0z"
+              fill="url(#Instagram_2_)"
+              fill-rule="evenodd"
+              id="Instagram"></path>
+          </g>
+        </g>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://tiktok.com/@mayalestari" label="TikTok">
+      <svg
+        slot="icon"
+        style="enable-background: new 0 0 64 64;"
+        version="1.1"
+        viewBox="0 0 64 64"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <style type="text/css">
+          .st0 {
+            fill: #4267b2;
+          }
+          .st1 {
+            fill: url(#SVGID_1_);
+          }
+          .st2 {
+            fill: #ffffff;
+          }
+          .st3 {
+            fill: #c2191e;
+          }
+          .st4 {
+            fill: #1da1f3;
+          }
+          .st5 {
+            fill: #fefe00;
+          }
+          .st6 {
+            fill: #25d366;
+            stroke: #ffffff;
+            stroke-width: 5;
+            stroke-miterlimit: 10;
+          }
+          .st7 {
+            fill: #cb2027;
+          }
+          .st8 {
+            fill: #0077b5;
+          }
+          .st9 {
+            fill: url(#SVGID_2_);
+          }
+          .st10 {
+            fill: url(#SVGID_3_);
+          }
+          .st11 {
+            fill: #ff004f;
+          }
+          .st12 {
+            fill: #00f7ef;
+          }
+          .st13 {
+            fill: #5181b8;
+          }
+          .st14 {
+            fill: #395976;
+          }
+          .st15 {
+            fill: #f58220;
+          }
+          .st16 {
+            fill: #e6162d;
+          }
+          .st17 {
+            fill: #ff9933;
+          }
+        </style>
+        <g id="guidlines"></g>
+        <g id="FB"></g>
+        <g id="ig"></g>
+        <g id="yt"></g>
+        <g id="twitter"></g>
+        <g id="snapchat"></g>
+        <g id="WA"></g>
+        <g id="Pinterrest"></g>
+        <g id="Layer_9"></g>
+        <g id="Layer_10"></g>
+        <g id="Layer_11">
+          <g>
+            <g>
+              <path
+                class="st11"
+                d="M58,19.4v9.3c-0.5,0-1.1,0.1-1.7,0.1c-4.5,0-8.7-1.7-11.9-4.4v19.8c0,4-1.3,7.8-3.6,10.8     c-3.2,4.3-8.4,7.2-14.3,7.2c-6.4,0-12-3.4-15.1-8.4c3.2,3,7.5,4.9,12.2,4.9c5.8,0,11-2.8,14.2-7.2c2.2-3,3.6-6.7,3.6-10.8V20.8     c3.2,2.8,7.3,4.4,11.9,4.4c0.6,0,1.1,0,1.7-0.1v-6c0.9,0.2,1.7,0.3,2.6,0.3H58z"
+              ></path>
+              <path
+                class="st11"
+                d="M29,26.3v10.3c-0.7-0.2-1.5-0.3-2.2-0.3c-4.4,0-8,3.7-8,8.2c0,1,0.2,1.9,0.5,2.8c-2-1.5-3.4-3.9-3.4-6.6     c0-4.5,3.6-8.2,8-8.2c0.8,0,1.5,0.1,2.2,0.3l0-6.6c0.2,0,0.4,0,0.6,0C27.5,26.2,28.3,26.2,29,26.3z"
+              ></path>
+              <path
+                class="st11"
+                d="M45.9,12c-1.8-1.6-3.1-3.8-3.8-6.1h2.4c0,0.5,0,0.9,0,1.4C44.7,8.9,45.2,10.5,45.9,12z"
+              ></path>
+            </g>
+          </g>
+          <path
+            d="M55.1,19.2v6c-0.5,0.1-1.1,0.1-1.7,0.1c-4.5,0-8.7-1.7-11.9-4.4v19.8c0,4-1.3,7.8-3.6,10.8c-3.3,4.4-8.4,7.2-14.2,7.2   c-4.7,0-9-1.9-12.2-4.9c-1.7-2.8-2.7-6-2.7-9.5c0-9.7,7.7-17.6,17.3-17.9l0,6.6c-0.7-0.2-1.5-0.3-2.2-0.3c-4.4,0-8,3.7-8,8.2   c0,2.7,1.3,5.2,3.4,6.6c1.1,3.1,4.1,5.4,7.5,5.4c4.4,0,8-3.7,8-8.2V5.9h7.3c0.7,2.4,2,4.5,3.8,6.1C47.7,15.6,51.1,18.3,55.1,19.2z"
+          ></path>
+          <g>
+            <g>
+              <g>
+                <path
+                  class="st12"
+                  d="M26.1,22.8l0,3.4c-9.6,0.3-17.3,8.2-17.3,17.9c0,3.5,1,6.7,2.7,9.5C8.1,50.3,6,45.7,6,40.5      c0-9.9,8-17.9,17.8-17.9C24.6,22.6,25.4,22.7,26.1,22.8z"
+                ></path>
+                <path
+                  class="st12"
+                  d="M42.1,5.9h-7.3v38.6c0,4.5-3.6,8.2-8,8.2c-3.5,0-6.4-2.2-7.5-5.4c1.3,0.9,2.9,1.5,4.6,1.5      c4.4,0,8-3.6,8-8.1V2h9.7v0.2c0,0.4,0,0.8,0.1,1.2C41.7,4.2,41.9,5.1,42.1,5.9z"
+                ></path>
+              </g>
+            </g>
+            <path
+              class="st12"
+              d="M55.1,15.5C55.1,15.5,55.1,15.5,55.1,15.5v3.6c-4-0.8-7.4-3.5-9.3-7.1C48.3,14.3,51.5,15.6,55.1,15.5z"
+            ></path>
+          </g>
+        </g>
+        <g id="Layer_12"></g>
+        <g id="Layer_13"></g>
+        <g id="Layer_14"></g>
+        <g id="Layer_15"></g>
+        <g id="Layer_16"></g>
+        <g id="Layer_17"></g>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://twitter.com/mayalestari" label="Twitter">
+      <svg
+        slot="icon"
+        height="100%"
+        style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;"
+        version="1.1"
+        viewBox="0 0 512 512"
+        width="100%"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <rect height="400" style="fill: none;" width="400" x="56" y="56"></rect>
+        <path
+          d="M161.014,464.013c193.208,0 298.885,-160.071 298.885,-298.885c0,-4.546 0,-9.072 -0.307,-13.578c20.558,-14.871 38.305,-33.282 52.408,-54.374c-19.171,8.495 -39.51,14.065 -60.334,16.527c21.924,-13.124 38.343,-33.782 46.182,-58.102c-20.619,12.235 -43.18,20.859 -66.703,25.498c-19.862,-21.121 -47.602,-33.112 -76.593,-33.112c-57.682,0 -105.145,47.464 -105.145,105.144c0,8.002 0.914,15.979 2.722,23.773c-84.418,-4.231 -163.18,-44.161 -216.494,-109.752c-27.724,47.726 -13.379,109.576 32.522,140.226c-16.715,-0.495 -33.071,-5.005 -47.677,-13.148l0,1.331c0.014,49.814 35.447,93.111 84.275,102.974c-15.464,4.217 -31.693,4.833 -47.431,1.802c13.727,42.685 53.311,72.108 98.14,72.95c-37.19,29.227 -83.157,45.103 -130.458,45.056c-8.358,-0.016 -16.708,-0.522 -25.006,-1.516c48.034,30.825 103.94,47.18 161.014,47.104"
+          style="fill: #1da1f2; fill-rule: nonzero;"></path>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://youtube.com/@mayalestari" label="YouTube">
+      <svg
+        slot="icon"
+        style="enable-background: new 0 0 64 64;"
+        version="1.1"
+        viewBox="0 0 64 64"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <style type="text/css">
+          .st0 {
+            fill: #4267b2;
+          }
+          .st1 {
+            fill: url(#SVGID_1_);
+          }
+          .st2 {
+            fill: #ffffff;
+          }
+          .st3 {
+            fill: #c2191e;
+          }
+          .st4 {
+            fill: #1da1f3;
+          }
+          .st5 {
+            fill: #fefe00;
+          }
+          .st6 {
+            fill: #25d366;
+            stroke: #ffffff;
+            stroke-width: 5;
+            stroke-miterlimit: 10;
+          }
+          .st7 {
+            fill: #cb2027;
+          }
+          .st8 {
+            fill: #0077b5;
+          }
+          .st9 {
+            fill: url(#SVGID_2_);
+          }
+          .st10 {
+            fill: url(#SVGID_3_);
+          }
+          .st11 {
+            fill: #ff004f;
+          }
+          .st12 {
+            fill: #00f7ef;
+          }
+          .st13 {
+            fill: #5181b8;
+          }
+          .st14 {
+            fill: #395976;
+          }
+          .st15 {
+            fill: #f58220;
+          }
+          .st16 {
+            fill: #e6162d;
+          }
+          .st17 {
+            fill: #ff9933;
+          }
+        </style>
+        <g id="guidlines"></g>
+        <g id="FB"></g>
+        <g id="ig"></g>
+        <g id="yt">
+          <path
+            class="st3"
+            d="M50,52H14C7.4,52,2,46.6,2,40V24c0-6.6,5.4-12,12-12h36c6.6,0,12,5.4,12,12v16C62,46.6,56.6,52,50,52z"
+          ></path>
+          <polygon class="st2" points="24,42 24,22 44,32  "></polygon>
+        </g>
+        <g id="twitter"></g>
+        <g id="snapchat"></g>
+        <g id="WA"></g>
+        <g id="Pinterrest"></g>
+        <g id="Layer_9"></g>
+        <g id="Layer_10"></g>
+        <g id="Layer_11"></g>
+        <g id="Layer_12"></g>
+        <g id="Layer_13"></g>
+        <g id="Layer_14"></g>
+        <g id="Layer_15"></g>
+        <g id="Layer_16"></g>
+        <g id="Layer_17"></g>
+      </svg>
+    </LinkItem>
+  </Links>
+</BaseLayout>

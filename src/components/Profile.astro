@@ -8,7 +8,7 @@ interface BadgeItem {
   colorClass?: string;
 }
 
-interface StatItem {
+interface Stat {
   value: string | number;
   label: string;
 }
@@ -19,11 +19,11 @@ interface Props {
   about: string;
   statusEmoji?: string;
   statusText: string;
-  statusLink: string;
+  statusLink?: string;
   avatarSrc: string;
   bannerSrc: string;
-  badges: BadgeItem[];
-  stats: StatItem[];
+  badges?: BadgeItem[];
+  stats?: Stat[];
 }
 
 const {
@@ -72,23 +72,36 @@ const {
     </div>
 
     <!-- Status -->
-    <a
-      href={statusLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="pointer-events-auto flex items-center gap-2 rounded-md bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary backdrop-blur-sm transition-colors duration-300 hover:bg-background-hover hover:text-text-primary"
-    >
-      {
-        statusEmoji ? (
-          <span class="text-xl">{statusEmoji}</span>
-        ) : (
-          <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
-            <div class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20" />
-          </div>
-        )
-      }
-      {statusText}
-    </a>
+    {
+      statusLink ? (
+        <a
+          href={statusLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pointer-events-auto flex items-center gap-2 rounded-md bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary backdrop-blur-sm transition-colors duration-300 hover:bg-background-hover hover:text-text-primary"
+        >
+          {statusEmoji ? (
+            <span class="text-base">{statusEmoji}</span>
+          ) : (
+            <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
+              <div class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20" />
+            </div>
+          )}
+          {statusText}
+        </a>
+      ) : (
+        <div class="pointer-events-auto flex items-center gap-2 rounded-md bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary backdrop-blur-sm">
+          {statusEmoji ? (
+            <span class="text-base">{statusEmoji}</span>
+          ) : (
+            <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
+              <div class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20" />
+            </div>
+          )}
+          {statusText}
+        </div>
+      )
+    }
   </div>
 
   <!-- User profile -->
@@ -97,9 +110,15 @@ const {
     <p class="mb-4 text-sm text-text-secondary md:text-base">@{username}</p>
 
     <!-- Badges -->
-    <div class="mb-5 flex flex-wrap items-center gap-1.5">
-      {badges.map((badge) => <Badge label={badge.label} className={badge.colorClass} />)}
-    </div>
+    {
+      badges?.length && (
+        <div class="mb-5 flex flex-wrap items-center gap-1.5">
+          {badges.map((badge) => (
+            <Badge label={badge.label} className={badge.colorClass} />
+          ))}
+        </div>
+      )
+    }
 
     <!-- About Me -->
     <div class="mb-3 flex items-center text-base font-semibold text-text-primary uppercase">
@@ -111,9 +130,18 @@ const {
     </div>
 
     <!-- Stats -->
-    <div class="flex gap-3">
-      {stats.map((stat) => <StatItem className="stat" value={stat.value} label={stat.label} />)}
-    </div>
+    {
+      stats?.length && (
+        <div class="flex gap-3">
+          {stats.map((stat) => (
+            <StatItem className="stat" value={stat.value} label={stat.label} />
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Slot for additional content -->
+    <slot />
   </div>
 </Card>
 

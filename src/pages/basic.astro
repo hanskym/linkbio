@@ -1,0 +1,168 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+import type { MetadataProps } from '@/types/metadata.ts';
+
+import Profile from '@/components/Profile.astro';
+import LinkItem from '@/components/ui/LinkItem.astro';
+
+const metadata: MetadataProps = {
+  title: 'Leo "ShadowX" Vargas | Gamer & Streamer',
+  description:
+    'Professional gamer & streamer, taking on the virtual world one match at a time. Join the journey!',
+  keywords: 'Leo Vargas, ShadowX, gamer, esports, Twitch, YouTube, streaming, gaming content',
+  author: 'Leo Vargas',
+  image: 'https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?w=1200&h=630&fit=crop',
+  locale: 'en_US',
+  twitterHandle: '@ShadowXGamer',
+};
+---
+
+<BaseLayout metadata={metadata}>
+  <Profile
+    name="Leo 'ShadowX' Vargas"
+    username="ShadowXGamer"
+    about="Competitive gamer & streamer. I’m all about FPS & RPGs, with epic gameplay and lots of fun. Catch me live on Twitch! 💥👾"
+    statusEmoji="⚔️"
+    statusText="Join the battle!"
+    statusLink="https://discord.gg/example"
+    avatarSrc="https://images.unsplash.com/photo-1636487658586-2e83d26f5e8c?w=128&h=128&fit=crop"
+    bannerSrc="https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?w=600&h=240&fit=crop"
+  >
+    <div class="flex w-full flex-col gap-3">
+      <LinkItem href="https://discord.com/users/ShadowXGamer" label="Discord">
+        <svg
+          slot="icon"
+          width="800px"
+          height="800px"
+          viewBox="0 -28.5 256 256"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          preserveAspectRatio="xMidYMid"
+        >
+          <g>
+            <path
+              d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"
+              fill="#5865F2"
+              fill-rule="nonzero"></path>
+          </g>
+        </svg>
+      </LinkItem>
+
+      <LinkItem href="https://twitch.tv/ShadowXGamer" label="Twitch">
+        <svg
+          slot="icon"
+          width="800px"
+          height="800px"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <path fill="#ffffff" d="M13 7.5l-2 2H9l-1.75 1.75V9.5H5V2h8v5.5z"></path>
+          <g fill="#9146FF">
+            <path
+              d="M4.5 1L2 3.5v9h3V15l2.5-2.5h2L14 8V1H4.5zM13 7.5l-2 2H9l-1.75 1.75V9.5H5V2h8v5.5z"
+            ></path>
+            <path d="M11.5 3.75h-1v3h1v-3zM8.75 3.75h-1v3h1v-3z"></path>
+          </g>
+        </svg>
+      </LinkItem>
+
+      <LinkItem href="https://youtube.com/c/ShadowXGamer" label="YouTube">
+        <svg
+          slot="icon"
+          style="enable-background: new 0 0 64 64;"
+          version="1.1"
+          viewBox="0 0 64 64"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <style type="text/css">
+            .st0 {
+              fill: #4267b2;
+            }
+            .st1 {
+              fill: url(#SVGID_1_);
+            }
+            .st2 {
+              fill: #ffffff;
+            }
+            .st3 {
+              fill: #c2191e;
+            }
+            .st4 {
+              fill: #1da1f3;
+            }
+            .st5 {
+              fill: #fefe00;
+            }
+            .st6 {
+              fill: #25d366;
+              stroke: #ffffff;
+              stroke-width: 5;
+              stroke-miterlimit: 10;
+            }
+            .st7 {
+              fill: #cb2027;
+            }
+            .st8 {
+              fill: #0077b5;
+            }
+            .st9 {
+              fill: url(#SVGID_2_);
+            }
+            .st10 {
+              fill: url(#SVGID_3_);
+            }
+            .st11 {
+              fill: #ff004f;
+            }
+            .st12 {
+              fill: #00f7ef;
+            }
+            .st13 {
+              fill: #5181b8;
+            }
+            .st14 {
+              fill: #395976;
+            }
+            .st15 {
+              fill: #f58220;
+            }
+            .st16 {
+              fill: #e6162d;
+            }
+            .st17 {
+              fill: #ff9933;
+            }
+          </style>
+          <g id="guidlines"></g>
+          <g id="FB"></g>
+          <g id="ig"></g>
+          <g id="yt">
+            <path
+              class="st3"
+              d="M50,52H14C7.4,52,2,46.6,2,40V24c0-6.6,5.4-12,12-12h36c6.6,0,12,5.4,12,12v16C62,46.6,56.6,52,50,52z"
+            ></path>
+            <polygon class="st2" points="24,42 24,22 44,32  "></polygon>
+          </g>
+          <g id="twitter"></g>
+          <g id="snapchat"></g>
+          <g id="WA"></g>
+          <g id="Pinterrest"></g>
+          <g id="Layer_9"></g>
+          <g id="Layer_10"></g>
+          <g id="Layer_11"></g>
+          <g id="Layer_12"></g>
+          <g id="Layer_13"></g>
+          <g id="Layer_14"></g>
+          <g id="Layer_15"></g>
+          <g id="Layer_16"></g>
+          <g id="Layer_17"></g>
+        </svg>
+      </LinkItem>
+    </div>
+  </Profile>
+</BaseLayout>
