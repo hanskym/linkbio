@@ -16,6 +16,14 @@
     "prettier-plugin-astro",
     "prettier-plugin-tailwindcss"
   ],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ],
   "importOrder": [
     "^(astro:(.*)$)|^(astro/(.*)$)|^(astro$)",
     "",
@@ -26,18 +34,21 @@
     "^types$",
     "^@/types/(.*)$",
     "",
+    "^@/layouts/(.*)$",
+    "",
     "^@/components/(.*)$",
     "^@/components/ui/(.*)$",
     "",
-    "^@/config/(.*)$",
-    "^@/hooks/(.*)$",
+    "^@/content/(.*)$",
+    "^@/data/(.*)$",
     "^@/lib/(.*)$",
+    "^@/schemas/(.*)$",
     "",
     "^@/styles/(.*)$",
     "",
     "^@/assets/(.*)$",
     "",
-    "^@/app/(.*)$",
+    "^@/pages/(.*)$",
     "",
     "^[./]"
   ],

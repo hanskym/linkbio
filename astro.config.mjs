@@ -12,6 +12,9 @@ export default defineConfig({
   adapter: cloudflare(),
   prefetch: true,
   trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
