@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://linkbio.hansky.dev',
+  site: 'https://linkbio-hsky.pages.dev',
   output: 'static',
   adapter: cloudflare(),
   prefetch: true,
